@@ -1,4 +1,4 @@
-什么是Git?
+﻿什么是Git?
 	
 Git的诞生
 	
@@ -41,10 +41,16 @@ Github
 
 
 分支管理
-	
-
+	查看分支
+       $ git branch
+	创建分支 
+       $ git branch 分支名称
+                切换分支  
+       $ git checkout 分支名称
+              合并分支
+       $ GIT merge 分支名称  
 解决冲突
-	
+	手动处理
 
 远程下载分支并处理冲突
 	
