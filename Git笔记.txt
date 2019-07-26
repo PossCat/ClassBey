@@ -37,9 +37,28 @@ git的安装：
 
 删除文件
 	
-
+不想删
+		git checkout -- 文件名
+	“真”想删
+		删库跑路
 Github
+	互联版Git
 	
+	将本机的SSH（加密传输协议）添加到对应账号的Github库
+		1.在本地创建SSH key
+			ssh-keygen -t rsa -C "email"
+		2.找到SSH key所在的路径
+		3.复制id_rsa.pub内容至Github中
+		4.测试是否连接成功
+			ssh -T git@github.com
+	
+	远程和本地连接
+		git remote add origin "链接地址"		//地址可为html或者SSH地址 
+
+	本地仓库推送到远程
+		git push -u origin master				//第一次需-u
+
+		git@github.com:tfpudge/Tao.git
 
 将本机的SSH添加到github
 	
@@ -49,7 +68,16 @@ Github
 
 把远程仓库克隆到本地
 	
-
+git clone 地址
+    协同开发
+       1 添加好友的SSH  KEY
+       2添加git好友
+ 参加开源项目
+   1 先找到你要参加的开源项目，fork到自己的github仓库
+   2 把自己的fork的项目clone到本地
+   3 修改项目
+    4 把修改好的项目push到自己的GitHub仓库
+      5把自己的修改pull给作者
 协同开发
 
 
@@ -72,7 +100,17 @@ Github
 远程下载分支并处理冲突
 	
 
-	
+	 从远程下载分支
+git fetch origin master : pro
+对比两个分支的区别
+git log -p 分支1的名称 分支2 的名称
+先合并 在手动处理，
+1git merge 分支
+手动删除冲出内容
+git add 文件名 
+git commit -m +信息
+上传到远程
+git push origin master
 	
 
 
