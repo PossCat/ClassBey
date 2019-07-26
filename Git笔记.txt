@@ -5,7 +5,12 @@ Git的诞生
 分布式和集中式
 	
 git的安装：
-	
+	一路下一步
+	安装完之后，设置自已的名字和邮箱
+	设置名字
+		git config --global user.name "名字"
+	设置邮箱
+		git config --global user.email "邮箱"
 创建版本库
 	创建一个空目录，作为版本库
 	初始化版本库
@@ -13,11 +18,30 @@ git的安装：
 		2.执行初始化命令
 			$ git init
 把文件添加到版本库
-	
+	1.创建一个文件
+	2.在仓库里面查看状态    工作区
+		git status
+	3.把文件添加到版本库    加到暂存区
+		git add 文件名
+	4.把文件更改信息提交给版本库    
+		git commit -m "信息"
+	5.查看文件每一个版本
+		git log
 时光穿梭
-	
+	回到以前的版本
+		git reset --hard 版本
+		版本：
+			HEAD:代表当前版本
+			HEAD^:代表上一个版本
+			HEAD^^:代表上上一个版本
+			HEAD~100:代表上100个版本
+	退到之后的版本：
+		1.查看历史版本号
+			git reflog
+		2.回退到该版本号
+			git reset --hard 版本号   如:4e849c8
 修改撤销：
-	
+	git checkout -- 文件名
 
 场景：1.在未提交之前，撤销修改
       git checkout -- (文件名)
