@@ -58,8 +58,12 @@ $ git clone 地址
 
 
 参加开源项目
-
-
+	1.先找到你要参加的开源项目，fork到自己的github仓库
+	2.把自己的fork的项目clone到本地
+	3.修改项目
+	4.把修改好的项目push到自己的github库
+	5.把自己修改好的pull给作者
+	
 
 分支管理
 		      v1.0    v2.0   v3.0           v4.0
@@ -81,10 +85,18 @@ $ git clone 地址
 	      git branch -d 分支名
 
 解决冲突
-	
+	强制合并( git merge 分支名)，手动解决
 
 远程下载分支并处理冲突
-	
+	从远程下载分支
+		git fetch origin master：pro
+	对比两个分支的区别
+		git log -p master pro 
+	强制合并( git merge 分支名)
+	手动删除：
+	git add wenjan.txt
+	git commit -m ""
+	git push origin master
 
 	
 	
