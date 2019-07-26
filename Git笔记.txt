@@ -1,4 +1,4 @@
-﻿什么是Git?
+什么是Git?
   分布式版本控制系统
 Git的诞生
 	
@@ -111,6 +111,153 @@ git add 文件名
 git commit -m +信息
 上传到远程
 git push origin master
+	
+
+
+
+
+
+
+
+
+
+
+=======
+﻿什么是Git?
+	分布式版本控制系统
+Git的诞生
+	linux的创造者linus
+分布式和集中式
+	分布式可以离线工作最后联网上传
+	集中式必须联网工作
+git的安装：
+	一路下一步
+	安装完之后，设置自已的名字和邮箱
+	设置名字
+		git config --global user.name "名字"
+	设置邮箱
+		git config --global user.email "邮箱"
+创建版本库
+	创建一个空目录，作为版本库
+	初始化版本库
+		1.进入到版本库所在目录
+		2.执行初始化命令
+			$ git init
+把文件添加到版本库
+	1.创建一个文件
+	2.在仓库里面查看状态    工作区
+		git status
+	3.把文件添加到版本库    加到暂存区
+		git add 文件名
+	4.把文件更改信息提交给版本库    
+		git commit -m "信息"
+	5.查看文件每一个版本
+		git log
+时光穿梭
+	回到以前的版本
+		git reset --hard 版本
+		版本：
+			HEAD:代表当前版本
+			HEAD^:代表上一个版本
+			HEAD^^:代表上上一个版本
+			HEAD~100:代表上100个版本
+	退到之后的版本：
+		1.查看历史版本号
+			git reflog
+		2.回退到该版本号
+			git reset --hard 版本号   如:4e849c8
+修改撤销：
+	git checkout -- 文件名
+
+场景：1.在未提交之前，撤销修改
+      git checkout -- (文件名)
+    2.在文件提交到暂存区，撤销修改
+       清除暂存区的文件
+      git reset HEAD （文件名）
+      替换工作区文件
+      git checkout -- （文件名）
+    3.在文件已经被commit之后，撤销修改，版本回退。 
+  删除文件
+         不想删除：git checkout -- (文件名)  （误删）
+
+
+         真想删除：（传达指令的过程）
+                  1.删除源文件
+                  2.添加暂存区（源文件）
+                   git add （文件名）
+                  3.提交
+                   git commit -m "信息" 
+	
+Github
+	
+
+将本机的SSH添加到github
+	1.在本地创建SSH key
+		ssh-keygen -t rsa -C "邮箱"
+	2.找到钥匙锁在的目录
+		c://User/web/.ssh/
+	3.复制id_rsa.pub内容到Github
+	4.测试连接
+		ssh -T git@github.com
+
+把本地仓库上传到远程github
+	1.连接远端仓库s
+	    查看连接详细  git remote -v
+	    git remote add origin  钥匙
+	   例： git remote add origin   git@github.com:gouhuiyang/GitTest.git
+	2.将文件推送到远端仓库
+	    查看分支状态
+		git pull
+	    将远程origin的master拉到本地，与本地分支master结合:
+	    	git pull origin master
+	    然后方可上传文件:
+	    	git push -u origin master（写的是分支的)
+	3.如果远程仓库已存在就先删除
+	   查看仓库详细地址 git remote -v
+	   删除仓库 git remote rm origin
+
+把远程仓库克隆到本地
+$ git clone 地址	
+
+协同开发
+	1.添加好友的SSH
+	2.添加git好友
+参加开源项目
+	1.先找到你要参加的开源项目，fork到自己的github仓库
+	2.把自己的fork的项目clone到本地
+	3.修改项目
+	4.把修改好的项目push到自己的github库
+	5.把自己修改好的pull给作者
+	
+
+分支管理
+					
+	查看分支
+	       git branch
+	创建分支
+	      git branch 分支名
+	切换分支
+	      git checkou 分支名
+	合并分支
+	      git merge 分支名
+	删除分支
+	      git branch -d 分支名
+
+解决冲突
+	强制合并( git merge 分支名)，手动解决
+
+远程下载分支并处理冲突
+	从远程下载分支
+		git fetch origin master：pro
+	对比两个分支的区别
+		git log -p master pro 
+	强制合并( git merge 分支名)
+	手动删除：
+	git add wenjan.txt
+	git commit -m ""
+	git push origin master
+
+	
 	
 
 
