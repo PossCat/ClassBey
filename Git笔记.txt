@@ -100,10 +100,18 @@ $ git clone 地址
 	      git branch -d 分支名
 
 解决冲突
-	
+	强制合并( git merge 分支名)，手动解决
 
 远程下载分支并处理冲突
-	
+	从远程下载分支
+		git fetch origin master：pro
+	对比两个分支的区别
+		git log -p master pro 
+	强制合并( git merge 分支名)
+	手动删除：
+	git add wenjan.txt
+	git commit -m ""
+	git push origin master
 
 	
 	
